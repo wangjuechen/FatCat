@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/JC/.android/build-cache/3ea3d9281436556c2e1b74e075a7eeb2b87e65cf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/JC/Documents/FatCat/FatCat/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_60912dfa6f285a4185d1a15bf13bfe66b7a1a5f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/JC/Documents/FatCat/FatCat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="03682913237779f11ca45e07aa3c21fdf34bde87">
+        <dex dex="/Users/JC/Documents/FatCat/FatCat/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_4aecad85497ca46cf80949e92bb785ef5223870f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/JC/Documents/FatCat/FatCat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/JC/Documents/FatCat/FatCat/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5dca53ed4fdb7aaed61675d6d898383457acb8d4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/JC/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/JC/Documents/FatCat/FatCat/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_489d6dda8434b4f65d56079b728a424947d3bebe/classes.dex" />
+    </item>
+
+</items>
