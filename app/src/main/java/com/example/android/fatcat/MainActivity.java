@@ -1,8 +1,5 @@
 package com.example.android.fatcat;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -10,15 +7,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
 
 public class MainActivity extends Activity {
 
@@ -26,12 +24,45 @@ public class MainActivity extends Activity {
     Button BtnPlay;
     Uri fileUri;
     String photoPath = "";
+    private EditText weight;
+    private TextView result;
+    private EditText age;
+    private EditText name;
+    private Button cal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iv=(ImageView)findViewById(R.id.ImageView);
         BtnPlay=(Button)findViewById(R.id.BtnPlay);
+
+        name = (EditText) findViewById(R.id.etName);
+        age = (EditText) findViewById(R.id.etAge);
+        weight = (EditText) findViewById(R.id.weight);
+
+        cal = (Button) findViewById(R.id.calc);
+
+        //Creating two Arrays for the Spinner Class
+        ArrayAdapter<CharSequence> adapterAge;
+        ArrayAdapter<CharSequence> adapterSex;
+
+        String[] genderAr = {"Domestic", "Persian","Siamese","Maine Coon"};
+        String[] typeAr = {"male", "female"};
+
+        Spinner genderDrp    =(Spinner)findViewById(R.id.spinGender);
+        Spinner typeDrp =(Spinner)findViewById(R.id.etType);
+
+        adapterAge =  new ArrayAdapter<CharSequence>(this,android.R.layout.simple_spinner_item,genderAr);
+        adapterAge.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderDrp.setAdapter(adapterAge);
+
+        adapterSex =  new ArrayAdapter<CharSequence>(this,android.R.layout.simple_spinner_item,typeAr);
+        adapterSex.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeDrp.setAdapter(adapterSex);
+
+        String selectedGender  = genderDrp.getSelectedItem().toString();
+        String selectedType  = typeDrp.getSelectedItem().toString();
+
         BtnPlay.setOnClickListener(new OnClickListener()
         {
             @Override
@@ -46,6 +77,14 @@ public class MainActivity extends Activity {
                 {
                     Log.e("Exception", e.getMessage());
                 }
+            }
+        });
+
+        cal.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(),AdviceActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -76,111 +115,43 @@ public class MainActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (resultCode == Activity.RESULT_OK)
+        if(requestCode==0)
         {
-            try
-            {
-                startingCameraIntent();
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
+            super.onActivityResult(requestCode, resultCode, data);
+            Bundle Extras = data.getExtras();
+            Bitmap mBitmap = (Bitmap)Extras.get("data");
+            iv.setImageBitmap(mBitmap);
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_topbar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_name) {
-
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void startingCameraIntent()
-    {
-        String fileName = System.currentTimeMillis()+".jpg";
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.Images.Media.TITLE, fileName);
-        fileUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-        startActivityForResult(intent, YOUR_REQ_CODE);
-    }
-
-    private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException
-    {
-        BitmapFactory.Options o = new BitmapFactory.Options();
-
-        o.inJustDecodeBounds = true;
-
-        BitmapFactory.decodeStream(getContentResolver()
-                .openInputStream(selectedImage), null, o);
-
-        final int REQUIRED_SIZE = 72;
-
-        int width_tmp = o.outWidth, height_tmp = o.outHeight;
-
-        int scale = 1;
-
-        while (true)
+        else
         {
-            if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE)
-            {
-                break;
-            }
-            width_tmp /= 2;
-
-            height_tmp /= 2;
-
-            scale *= 2;
+            Toast.makeText(this, "You didn't take photo", Toast.LENGTH_SHORT).show();
         }
-
-        BitmapFactory.Options o2 = new BitmapFactory.Options();
-
-        o2.inSampleSize = scale;
-
-        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver()
-                .openInputStream(selectedImage), null, o2);
-
-        return bitmap;
     }
 
-    private String getPath(Uri selectedImaeUri)
-    {
-        String[] projection = { MediaStore.Images.Media.DATA };
+    /*private void displayBMI(float bmi) {
+        String bmiLabel = "";
 
-        Cursor cursor = managedQuery(selectedImaeUri, projection, null, null,
-                null);
-
-        if (cursor != null)
-        {
-            cursor.moveToFirst();
-
-            int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-
-            return cursor.getString(columnIndex);
+        if (Float.compare(bmi, 15f) <= 0) {
+            bmiLabel = getString(R.string.very_severely_underweight);
+        } else if (Float.compare(bmi, 15f) > 0  &&  Float.compare(bmi, 16f) <= 0) {
+            bmiLabel = getString(R.string.severely_underweight);
+        } else if (Float.compare(bmi, 16f) > 0  &&  Float.compare(bmi, 18.5f) <= 0) {
+            bmiLabel = getString(R.string.underweight);
+        } else if (Float.compare(bmi, 18.5f) > 0  &&  Float.compare(bmi, 25f) <= 0) {
+            bmiLabel = getString(R.string.normal);
+        } else if (Float.compare(bmi, 25f) > 0  &&  Float.compare(bmi, 30f) <= 0) {
+            bmiLabel = getString(R.string.overweight);
+        } else if (Float.compare(bmi, 30f) > 0  &&  Float.compare(bmi, 35f) <= 0) {
+            bmiLabel = getString(R.string.obese_class_i);
+        } else if (Float.compare(bmi, 35f) > 0  &&  Float.compare(bmi, 40f) <= 0) {
+            bmiLabel = getString(R.string.obese_class_ii);
+        } else {
+            bmiLabel = getString(R.string.obese_class_iii);
         }
 
-        return selectedImaeUri.getPath();
-    }
-
+        bmiLabel = bmi + "\n\n" + bmiLabel;
+        result.setText(bmiLabel);
+    }*/
 
 }
 

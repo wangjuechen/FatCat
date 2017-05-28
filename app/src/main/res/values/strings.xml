@@ -4,7 +4,49 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="btn_makePlan">Make a plan</string>
-    <string name="btn_checkWholeJourney">Check Whole Journey</string>
+    <string name="btn_makePlan">Start a plan</string>
+    <string name="btn_checkWholeJourney">I really did it!!!</string>
+    <string name="btn_shareCatInFacebook">Share Your Cat On Facebook</string>
+
+    <string name="summaryInAdvicePage">Your cat 36% - 45% body fat \n It is a high risk</string>
+    <string name="adviceInAdvicePage">Benefit: \n1.Your cat will have lifes as long as possible.\n2.Your are saving your cat.</string>
+
+    <string name="firstStageTitle"><b>First Stage</b></string>
+    <string name="courageInPlanPage">Your cat can be a princess</string>
+    <string name="startNextStage">Let\'s start next stage</string>
+    <string name="btn_startNextStage">Start Second Stage</string>
+    <string name="btn_checkCatEvolution">check your cat\'s evolution</string>
+
+    <string name="btn_shareFacebook">Share your car on facebook</string>
+    <string name="initialTimeTitle">Initial Impression 1D</string>
+    <string name="firstTimeTitle">First Stage 15D</string>
+
+    <string name="dateTitle">Date:</string>
+    <string name="weightTitle">Weight:</string>
+    <string name="FatPercentage">Body Fat Percentage:</string>
+    <string name="Risk">Risk:</string>
+
+    <string name="dateInitialPage">23/04/2017</string>
+    <string name="weightInitialPage">13.6kg</string>
+    <string name="bodyFatPercentage">37%</string>
+    <string name="riskInitialPage">High risk</string>
+
+    <string name="dateFirstPage">08/05/2017</string>
+    <string name="weightFirstPage">10.2kg</string>
+    <string name="bodyFatPercentageFirstPage">26%</string>
+    <string name="riskFirstPage">Moderate risk</string>
+
+    <string name="etName">Name</string>
+    <string name="etAge">Age</string>
+    <string name="spinGender">Gender</string>
+    <string name="weight">Weight</string>
+    <string name="etType">Type</string>
+    <string name="calculateCat">Calculate Cat Fat</string>
+
+    <string name="underweight">underweight</string>
+    <string name="normal">normal</string>
+    <string name="overweight">overweight</string>
+
 </resources>

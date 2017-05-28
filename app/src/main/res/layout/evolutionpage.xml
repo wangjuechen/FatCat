@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_initailInformation"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/btn_checkEvolution"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_checkEvolution">
+
+        <TextView
+            android:id="@+id/tv_initialStageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/initialTimeTitle"
+            android:textColor="@color/btnColor"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/iv_imageInitialStage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/imagesfromtopandright"
+            app:layout_constraintTop_toBottomOf="@+id/tv_initialStageTitle"/>
+
+        <TextView
+            android:id="@+id/DatetitleInitialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateTitle"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_imageInitialStage"
+            app:layout_constraintTop_toTopOf="@+id/iv_imageInitialStage"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateInitialPage"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintLeft_toRightOf="@+id/DatetitleInitialPage"
+            app:layout_constraintTop_toTopOf="@+id/DatetitleInitialPage"
+            app:layout_constraintBottom_toBottomOf="@+id/DatetitleInitialPage"/>
+
+        <TextView
+            android:id="@+id/weightTitleInitialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weightTitle"
+            app:layout_constraintLeft_toLeftOf="@+id/DatetitleInitialPage"
+            app:layout_constraintTop_toBottomOf="@+id/DatetitleInitialPage"/>
+
+        <TextView
+            android:id="@+id/weightInitialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weightInitialPage"
+            app:layout_constraintLeft_toRightOf="@+id/weightTitleInitialPage"
+            app:layout_constraintTop_toTopOf="@+id/weightTitleInitialPage"
+            />
+
+        <TextView
+            android:id="@+id/fatPercentageTitleIntialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/FatPercentage"
+            app:layout_constraintLeft_toLeftOf="@+id/DatetitleInitialPage"
+            app:layout_constraintTop_toBottomOf="@+id/weightTitleInitialPage"/>
+
+        <TextView
+            android:id="@+id/fatPercentageIntialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bodyFatPercentage"
+            android:layout_marginLeft="6dp"
+            android:textColor="@android:color/holo_red_light"
+            app:layout_constraintLeft_toRightOf="@+id/fatPercentageTitleIntialPage"
+            app:layout_constraintTop_toTopOf="@+id/fatPercentageTitleIntialPage"/>
+
+        <TextView
+            android:id="@+id/riskTitleIntialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Risk"
+            app:layout_constraintLeft_toLeftOf="@+id/DatetitleInitialPage"
+            app:layout_constraintTop_toBottomOf="@+id/fatPercentageTitleIntialPage"/>
+
+        <TextView
+            android:id="@+id/riskInitialPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/riskInitialPage"
+            android:textColor="@android:color/holo_red_light"
+            app:layout_constraintLeft_toRightOf="@+id/riskTitleIntialPage"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@+id/riskTitleIntialPage"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_firstStageInformation"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_initailInformation"
+        app:layout_constraintRight_toRightOf="@+id/btn_checkEvolution"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_checkEvolution">
+
+        <TextView
+            android:id="@+id/tv_FirstStageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstTimeTitle"
+            android:textColor="@color/btnColor"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/iv_imageInFirstStage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/imagesfromtopandright"
+            app:layout_constraintTop_toBottomOf="@+id/tv_FirstStageTitle"/>
+
+        <TextView
+            android:id="@+id/DatetitleFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateTitle"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_imageInFirstStage"
+            app:layout_constraintTop_toTopOf="@+id/iv_imageInFirstStage"/>
+
+        <TextView
+            android:id="@+id/DateFirstpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateFirstPage"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintLeft_toRightOf="@+id/DatetitleFirstPage"
+            app:layout_constraintTop_toTopOf="@+id/DatetitleFirstPage"
+            app:layout_constraintBottom_toBottomOf="@+id/DatetitleFirstPage"/>
+
+        <TextView
+            android:id="@+id/weightTitleFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weightTitle"
+            app:layout_constraintLeft_toLeftOf="@+id/DatetitleFirstPage"
+            app:layout_constraintTop_toBottomOf="@+id/DatetitleFirstPage"/>
+
+        <TextView
+            android:id="@+id/weightFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weightFirstPage"
+            app:layout_constraintLeft_toRightOf="@+id/weightTitleFirstPage"
+            app:layout_constraintTop_toTopOf="@+id/weightTitleFirstPage"/>
+
+
+        <TextView
+            android:id="@+id/fatPercentageTitleFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/FatPercentage"
+            app:layout_constraintLeft_toLeftOf="@+id/DatetitleFirstPage"
+            app:layout_constraintTop_toBottomOf="@+id/weightTitleFirstPage"/>
+
+        <TextView
+            android:id="@+id/fatPercentageFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_light"
+            android:text="@string/bodyFatPercentageFirstPage"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintLeft_toRightOf="@+id/fatPercentageTitleFirstPage"
+            app:layout_constraintTop_toTopOf="@+id/fatPercentageTitleFirstPage"/>
+
+
+        <TextView
+            android:id="@+id/riskTitleFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Risk"
+            app:layout_constraintLeft_toLeftOf="@+id/DatetitleFirstPage"
+            app:layout_constraintTop_toBottomOf="@+id/fatPercentageTitleFirstPage"/>
+
+        <TextView
+            android:id="@+id/riskFirstPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/riskFirstPage"
+            android:textColor="@android:color/holo_red_light"
+            app:layout_constraintLeft_toRightOf="@+id/riskTitleFirstPage"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/fatPercentageTitleFirstPage"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/btn_checkEvolution"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/btn_shareCatInFacebook"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="@color/btnColor"
+        />
+
+</android.support.constraint.ConstraintLayout>
