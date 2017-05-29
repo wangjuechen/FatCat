@@ -34,6 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".AdviceActivity"/>
+        <activity android:name=".PlanActivity"/>
+        <activity android:name=".EvolutionActivity"/>
     </application>
 
 

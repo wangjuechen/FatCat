@@ -32,9 +32,10 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        iv=(ImageView)findViewById(R.id.ImageView);
-        BtnPlay=(Button)findViewById(R.id.BtnPlay);
+        setContentView(R.layout.main);
+
+       /* iv=(ImageView)findViewById(R.id.ImageView);
+        BtnPlay=(Button)findViewById(R.id.BtnPlay);*/
 
         name = (EditText) findViewById(R.id.etName);
         age = (EditText) findViewById(R.id.etAge);
@@ -49,7 +50,7 @@ public class MainActivity extends Activity {
         String[] genderAr = {"Domestic", "Persian","Siamese","Maine Coon"};
         String[] typeAr = {"male", "female"};
 
-        Spinner genderDrp    =(Spinner)findViewById(R.id.spinGender);
+        Spinner genderDrp  =(Spinner)findViewById(R.id.spinGender);
         Spinner typeDrp =(Spinner)findViewById(R.id.etType);
 
         adapterAge =  new ArrayAdapter<CharSequence>(this,android.R.layout.simple_spinner_item,genderAr);
@@ -63,22 +64,22 @@ public class MainActivity extends Activity {
         String selectedGender  = genderDrp.getSelectedItem().toString();
         String selectedType  = typeDrp.getSelectedItem().toString();
 
-        BtnPlay.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View arg0)
-            {
-                try
-                {
-                    Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(intent, 0);
-                }
-                catch(Exception e)
-                {
-                    Log.e("Exception", e.getMessage());
-                }
-            }
-        });
+//        BtnPlay.setOnClickListener(new OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View arg0)
+//            {
+//                try
+//                {
+//                    Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                    startActivityForResult(intent, 0);
+//                }
+//                catch(Exception e)
+//                {
+//                    Log.e("Exception", e.getMessage());
+//                }
+//            }
+//        });
 
         cal.setOnClickListener(new OnClickListener() {
             @Override
@@ -91,7 +92,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onResume() {
-        iv=(ImageView)findViewById(R.id.ImageView);
+        /*iv=(ImageView)findViewById(R.id.ImageView);
         BtnPlay=(Button)findViewById(R.id.BtnPlay);
         BtnPlay.setOnClickListener(new OnClickListener()
         {
@@ -108,7 +109,7 @@ public class MainActivity extends Activity {
                     Log.e("Exception", e.getMessage());
                 }
             }
-        });
+        });*/
         super.onResume();
     }
 

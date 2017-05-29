@@ -92,6 +92,7 @@
         android:layout_below="@+id/etType"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
+        android:background="@color/btnColor"
         android:minHeight="100px"
         android:layout_marginBottom="30px"
         android:onClick="calculateCat"
@@ -100,13 +101,13 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/calc"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
         android:minHeight="100px"
-        android:layout_marginBottom="30px"
         android:textSize="20sp"
 
         />
